@@ -159,8 +159,8 @@
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tables'}"><i class="fa fa-table"></i><span class="page">Tables</span></a></li>
 
           <li class="header">首页管理</li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tasks'}"><i class="fa fa-tasks"></i><span class="page">Tasks</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/setting'}"><i class="fa fa-cog"></i><span class="page">Settings</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tasks'}"><i class="fa fa-tasks"></i><span class="page">图片</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/setting'}"><i class="fa fa-cog"></i><span class="page">新闻</span></a></li>
 
           <li class="header">用户管理</li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/access'}"><i class="fa fa-book"></i><span class="page">Access</span></a></li>
