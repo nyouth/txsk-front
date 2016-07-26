@@ -8,18 +8,19 @@ import { domain, count, prettyDate, pluralize } from './filters'
 
 // Import Views - Top level
 import AppView from './components/App.vue'
-import DashView from './components/Dash.vue'
+import DashView from './components/admin/Dash.vue'
 import LoginView from './components/Login.vue'
 import NotFoundView from './components/404.vue'
+import IndexView from './components/index/index.vue'
 
 // Import Views - Dash
-import DashboardView from './components/dash/Dashboard.vue'
-import TablesView from './components/dash/Tables.vue'
-import TasksView from './components/dash/Tasks.vue'
-import SettingView from './components/dash/Setting.vue'
-import AccessView from './components/dash/Access.vue'
-import ServerView from './components/dash/Server.vue'
-import ReposView from './components/dash/Repos.vue'
+import DashboardView from './components/admin/dash/Dashboard.vue'
+import TablesView from './components/admin/dash/Tables.vue'
+import TasksView from './components/admin/dash/Tasks.vue'
+import SettingView from './components/admin/dash/Setting.vue'
+import AccessView from './components/admin/dash/Access.vue'
+import ServerView from './components/admin/dash/Server.vue'
+import ReposView from './components/admin/dash/Repos.vue'
 
 // Import Install and register helper items
 Vue.use(Router)
@@ -38,6 +39,9 @@ var router = new Router({
 router.map({
   '/login': {
     component: LoginView
+  },
+  '/': {
+    component: IndexView
   },
   '/admin': {
     component: DashView,

@@ -158,16 +158,16 @@
           <li class="active pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin'}"><i class="fa fa-desktop"></i><span class="page">Dashboard</span></a></li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tables'}"><i class="fa fa-table"></i><span class="page">Tables</span></a></li>
 
-          <li class="header">ME</li>
+          <li class="header">首页管理</li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tasks'}"><i class="fa fa-tasks"></i><span class="page">Tasks</span></a></li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/setting'}"><i class="fa fa-cog"></i><span class="page">Settings</span></a></li>
 
-          <li class="header">LOGS</li>
+          <li class="header">用户管理</li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/access'}"><i class="fa fa-book"></i><span class="page">Access</span></a></li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/server'}"><i class="fa fa-hdd-o"></i><span class="page">Server</span></a></li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/repos'}"><i class="fa fa-heart"></i><span class="page">Repos</span><small class="label pull-right bg-green">AJAX</small></a></li>
 
-          <li class="header">PAGES</li>
+          <li class="header">系统设置</li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span class="page">Login</span></a></li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/404'}"><i class="fa fa-circle-o text-red"></i> <span class="page">404</span></a></li>
         </ul>
@@ -261,5 +261,8 @@ module.exports = {
 <style>
 .user-panel {
   height: 4em;
+}
+.sidebar-menu > li.header {
+  color: #fff !important;
 }
 </style>

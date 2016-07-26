@@ -1,7 +1,8 @@
 <template>
-  <div class="container container-table">
+  <div class="container container-table login">
       <div class="row vertical-10p">
         <div class="container">
+          <h1>团学时空后台</h1>
           <img src="/static/img/logo.png" class="center-block logo">
           <div class="text-center col-md-4 col-sm-offset-4">
             <!-- errors -->
@@ -107,7 +108,13 @@ module.exports = {
 <style>
 html, body, .container-table {
   height: 100%;
+  /*background-color: #282B30 !important;*/
+}
+.login {
   background-color: #282B30 !important;
+}
+h1 {
+  text-align: center;
 }
 .container-table {
     display: table;
