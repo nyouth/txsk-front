@@ -15,7 +15,7 @@
 
 <style>
 body {
-  font-family: "Microsoft Yahei",Arial,"宋体",Helvetica;
+  font-family: "Microsoft Yahei",Arial,Helvetica;
 }
 .myslide {
   width: 100%;

@@ -1,6 +1,6 @@
 <template>
     <!-- <nv-slide></nv-slide> -->
-  <div id="myCarousel" class="carousel slide">
+  <div id="carousel-example-generic" class="carousel slide">
      <!-- 轮播（Carousel）指标 -->
      <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
