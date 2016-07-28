@@ -1,10 +1,28 @@
 <template>
-  <h2>新闻</h2>
-  <ul>
-    <li v-for='new in response.data.txsd'>
-      <a :href="new.href">{{new.title}}</a>
-    </li>
-  </ul>
+  <div class="col-md-4">
+    <h1>团学速递</h1>
+    <ul class="newslist">
+      <li v-for='new in response.data.txsd'>
+        <a :href="new.href">{{new.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h1>院系团训</h1>
+    <ul class="newslist">
+      <li v-for='new in response.data.yxdt'>
+        <a :href="new.href">{{new.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h1>通知公告</h1>
+    <ul class="newslist">
+      <li v-for='new in response.data.tzgg'>
+        <a :href="new.href">{{new.title}}</a>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
@@ -47,4 +65,9 @@ export default {
 </script>
 
 <style>
+.newslist li {
+  display:block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 </style>

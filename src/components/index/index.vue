@@ -4,15 +4,7 @@
     <nv-slide></nv-slide>
   </div>
   <div class="news-list">
-    <div class="col-md-4">
-      <nv-news></nv-news>
-    </div>
-    <div class="col-md-4">
-      <nv-news></nv-news>
-    </div>
-    <div class="col-md-4">
-      <nv-news></nv-news>
-    </div>
+    <nv-news></nv-news>
   </div>
 </template>
 <script>
