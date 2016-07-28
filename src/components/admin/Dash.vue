@@ -17,110 +17,6 @@
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-            <!-- Messages-->
-            <li class="dropdown messages-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-envelope-o"></i>
-                <span class="label label-success">{{ state.userInfo.messages | count }}</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.messages | count }} messages</li>
-                <li>
-                  <!-- inner menu: contains the messages -->
-                  <ul class="menu">
-                    <li><!-- start message -->
-                      <a href="#">
-                        <!-- Message title and timestamp -->
-                        <h4>
-                          Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                        </h4>
-                        <!-- The message -->
-                        <p>Why not buy a new awesome theme?</p>
-                      </a>
-                    </li>
-                    <!-- end message -->
-                  </ul>
-                  <!-- /.menu -->
-                </li>
-                <li class="footer"><a href="#">See All Messages</a></li>
-              </ul>
-            </li>
-            <!-- /.messages-menu -->
-
-            <!-- Notifications Menu -->
-            <li class="dropdown notifications-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">{{ state.userInfo.notifications | count }}</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.notifications | count }} notifications</li>
-                <li>
-                  <!-- Inner Menu: contains the notifications -->
-                  <ul class="menu">
-                    <li><!-- start notification -->
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                      </a>
-                    </li>
-                    <!-- end notification -->
-                  </ul>
-                </li>
-                <li class="footer"><a href="#">View all</a></li>
-              </ul>
-            </li>
-
-            <!-- Tasks Menu -->
-            <li class="dropdown tasks-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-flag-o"></i>
-                <span class="label label-danger">{{ state.userInfo.tasks | count }} </span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.tasks | count }}  tasks</li>
-                <li>
-                  <!-- Inner menu: contains the tasks -->
-                  <ul class="menu">
-                    <li><!-- Task item -->
-                      <a href="#">
-                        <!-- Task title and progress text -->
-                        <h3>
-                          Design some buttons
-                          <small class="pull-right">20%</small>
-                        </h3>
-                        <!-- The progress bar -->
-                        <div class="progress xs">
-                          <!-- Change the css width attribute to simulate progress -->
-                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                            <span class="sr-only">20% Complete</span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <!-- end task item -->
-                  </ul>
-                </li>
-                <li class="footer">
-                  <a href="#">View all tasks</a>
-                </li>
-              </ul>
-            </li>
-
-            <!-- User Account Menu -->
-            <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <!-- The user image in the navbar-->
-                <img v-bind:src=demo.avatar class="user-image" alt="User Image">
-                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">{{ demo.displayName }}</span>
-              </a>
-            </li>
-          </ul>
-        </div>
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
@@ -155,12 +51,12 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
           <li class="header">TOOLS</li>
-          <li class="active pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin'}"><i class="fa fa-desktop"></i><span class="page">Dashboard</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tables'}"><i class="fa fa-table"></i><span class="page">Tables</span></a></li>
+          <li class="active pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin'}"><i class="fa fa-desktop"></i><span class="page">控制板</span></a></li>
+          <!-- <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tables'}"><i class="fa fa-table"></i><span class="page">Tables</span></a></li> -->
 
           <li class="header">首页管理</li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/tasks'}"><i class="fa fa-tasks"></i><span class="page">图片</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/setting'}"><i class="fa fa-cog"></i><span class="page">新闻</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/images'}"><i class="fa fa-tasks"></i><span class="page">图片</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/news'}"><i class="fa fa-cog"></i><span class="page">新闻</span></a></li>
 
           <li class="header">用户管理</li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/access'}"><i class="fa fa-book"></i><span class="page">Access</span></a></li>
@@ -168,8 +64,8 @@
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/repos'}"><i class="fa fa-heart"></i><span class="page">Repos</span><small class="label pull-right bg-green">AJAX</small></a></li>
 
           <li class="header">系统设置</li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span class="page">Login</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/404'}"><i class="fa fa-circle-o text-red"></i> <span class="page">404</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span class="page">登录</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/admin/system'}"><i class="fa fa-circle-o text-red"></i> <span class="page">新闻系统设置</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
       </section>

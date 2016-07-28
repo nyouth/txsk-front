@@ -21,6 +21,8 @@ import SettingView from './components/admin/dash/Setting.vue'
 import AccessView from './components/admin/dash/Access.vue'
 import ServerView from './components/admin/dash/Server.vue'
 import ReposView from './components/admin/dash/Repos.vue'
+import SystemView from './components/admin/dash/system.vue'
+import ImageView from './components/admin/dash/Image.vue'
 
 // Import Install and register helper items
 Vue.use(Router)
@@ -62,6 +64,11 @@ router.map({
         name: 'Tasks',
         description: 'Tasks page in the form of a timeline'
       },
+      '/images': {
+        component: ImageView,
+        name: '首页Banner',
+        description: 'Banner列表'
+      },
       '/setting': {
         component: SettingView,
         name: 'Settings',
@@ -76,6 +83,11 @@ router.map({
         component: ServerView,
         name: 'Servers',
         description: 'List of our servers'
+      },
+      '/system': {
+        component: SystemView,
+        name: 'System',
+        description: 'news system'
       },
       '/repos': {
         component: ReposView,

@@ -22,7 +22,7 @@
 <style>
 .navbar {
   background-color: #891619;
-  height: 80px;
+  /*height: 80px;*/
   margin-bottom: 0;
   border: none;
 }
