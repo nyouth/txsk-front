@@ -3,12 +3,24 @@
   <div class="myslide">
     <nv-slide></nv-slide>
   </div>
+  <div class="news-list">
+    <div class="col-md-4">
+      <nv-news></nv-news>
+    </div>
+    <div class="col-md-4">
+      <nv-news></nv-news>
+    </div>
+    <div class="col-md-4">
+      <nv-news></nv-news>
+    </div>
+  </div>
 </template>
 <script>
   export default {
     components: {
       'nvHead': require('./header.vue'),
-      'nvSlide': require('./slide.vue')
+      'nvSlide': require('./slide.vue'),
+      'nvNews': require('./news.vue')
     }
 }
 </script>
