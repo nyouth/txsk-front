@@ -69,5 +69,14 @@ export default {
   display:block;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 95%;
+}
+.newslist a {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  float: left;
 }
 </style>
