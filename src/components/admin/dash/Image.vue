@@ -30,10 +30,30 @@
                   </table>
                 </div>
                 <div class="col-sm-12 imageInput">
-                  <div class="form-group">
-                    <label for="exampleInputFile">图片上传</label>
-                    <input type="file" id="exampleInputFile">
-                    <p class="help-block">选择一张图片上传</p>
+                  <vue-file-upload url="http://localhost:9001/api/slide" v-bind:files.sync="files" v-bind:filters="filters" v-bind:events="cbEvents" v-bind:request-options="reqopts"></vue-file-upload>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>文件名</th>
+                        <th>大小</th>
+                        <th>进度</th>
+                        <th>状态</th>
+                        <th>action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="file in files">
+                        <td v-text="file.name"></td>
+                        <td v-text="file.size"></td>
+                        <td v-text="file.progress"></td>
+                        <td v-text="onStatus(file)"></td>
+                        <td>
+                          <button type="button" @click="uploadItem(file)">上传</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button type="button" @click="uploadAll">上传所有文件</button>
                   </div>
                 </div>
               </div>
@@ -49,6 +69,90 @@
 </template>
 
 <script>
+import VueFileUpload from 'vue-file-upload';
+export default{
+  data(){
+    return{
+      files:[],
+      imageUrl: 'http://localhost:9001/api/images',
+      response: null,
+      error: null,
+      //文件过滤器，只能上传图片
+      filters:[
+        {
+          name:"imageFilter",
+          fn(file){
+              var type = '|' + file.type.slice(file.type.lastIndexOf('/') + 1) + '|';
+              return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
+          }
+        }
+      ],
+      //回调函数绑定
+      cbEvents:{
+        onCompleteUpload:(file,response,status,header)=>{
+          console.log(file);
+          console.log("finish upload;")
+        }
+      },
+      //xhr请求附带参数
+      reqopts:{
+        formData:{
+          tokens:'tttttttttttttt'
+        },
+        responseType:'json',
+        withCredentials:false
+      }
+    }
+  },
+  methods:{
+    onStatus(file){
+      if(file.isSuccess){
+        return "上传成功";
+      }else if(file.isError){
+        return "上传失败";
+      }else if(file.isUploading){
+        return "正在上传";
+      }else{
+        return "待上传";
+      }
+    },
+    uploadItem(file){
+      //单个文件上传
+      file.upload();
+    },
+    uploadAll(){
+      //上传所有文件
+      this.$broadcast('DO_POST_FILE');
+    },
+    callImages: function () {
+      var repo = this
+      console.log('repo', repo)
+      this.$parent.$parent.callAPI('GET', this.imageUrl).then(function (response) {
+        console.log(response)
+
+        repo.response = response
+
+        if (response.status !== 200) {
+          this.error = response.statusText
+        }
+      }, function (response) {
+        console.log('error', response)
+        this.error = response
+      })
+    }
+  },
+  components:{
+    VueFileUpload
+  },
+  ready: function () {
+    console.log('Inside ready')
+    if (this.response === null) {
+      this.callImages()
+    } else {
+      console.log('respsonse already there', this.response)
+    }
+  }
+}
 </script>
 
 <style>
