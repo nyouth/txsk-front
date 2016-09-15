@@ -29,6 +29,13 @@
                     </tbody>
                   </table>
                 </div>
+                <div class="col-sm-12 imageInput">
+                  <div class="form-group">
+                    <label for="exampleInputFile">图片上传</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">选择一张图片上传</p>
+                  </div>
+                </div>
               </div>
             </div>
            <!-- <vue-nav :cur.sync="cur" :all.sync="all" v-on:btn-click="loadData" v-on:next="loadData"></vue-nav>
